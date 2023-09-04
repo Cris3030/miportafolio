@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+.nav {
+	background: #293241;
+	color: #fff;
+	height: 80px;
+}
+
+.nav__container {
+	align-items: center;
+	display: flex;
+	height: 100%;
+	justify-content: space-between;
+	margin: 0 auto;
+	width: 90%;
+}
+
+.nav__logo {
+	font-size: 1.5em;
+	font-weight: 900;
+}
+
+.nav__menu {
+	display: grid;
+	grid-auto-flow: column;
+	gap: 3em;
+}
+
+.nav__input:checked + .nav__menu {
+
+}
+
+.cont_x, .nav__input{
+	display: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+.nav__menu {
+	left: 45%;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	/*transform: translate(-50%, -50%);*/
+}
+
+.nav__menu ul {
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+
+.nav__menu ul li a {
+	color: #acee84;
+	display: block;
+	font-size: 1.5rem;
+	margin: 0 0.8rem;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.nav__menu ul li a::before {
+	background: #579d9c;
+	bottom: 0;
+	content: '';
+	height: 0.2rem;
+	left: 0;
+	position: absolute;
+	transition: .5s;
+	width: 0;
+}
+
+.nav__menu ul li a::after {
+	background: #f9557b;
+	bottom: 0;
+	content: '';
+	height: 0.2rem;
+	position: absolute;
+	right: 0;
+	transition: .5s;
+	width: 0;
+}
+
+.nav__menu ul li:hover a {
+	color: #f9c35e;
+}
+
+.nav__menu ul li:hover a::before {
+	transform: translate(100%);
+	width: 50%;
+}
+
+.nav__menu ul li:hover a::after {
+	transform: translate(-100%);
+	width: 50%;
+}
+
+@media (max-width: 700px){
+	.cont_x {
+		display: block;
+		cursor: pointer;
+		}
+
+	.nav__menu {
+		align-items: center;
+		background: rgba( 144, 12, 63 , .9);
+		bottom: 0;
+		clip-path: circle(0.0% at 50% 50%);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		left: 0;
+		position: fixed;
+		top: 80px;
+		transition: clip-path 1s ease-in-out;
+		width: 100%;
+		}
+
+	.nav__input:checked + .nav__menu {
+		clip-path: circle(100% at 50% 50%);
+		}
+
+	.nav__menu ul {
+		display: block;
+		}
+
+	.nav__menu ul li a {
+		/*color: #3f5d7a;*/
+		margin-top: 40px;
+		}
+	}

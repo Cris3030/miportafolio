@@ -1,0 +1,163 @@
+.activeline1__bars-menu {
+	transform: rotate(45deg) translate(-2px, 1px);
+}
+
+.activeline2__bars-menu {
+	opacity: 0;
+	margin-left: -30px;
+}
+
+.activeline3__bars-menu {
+	transform: rotate(-45deg) translate(-4px, 2px);
+}
+
+.lbl-menu {
+	cursor: pointer;
+	height: 5px;
+	position: relative;
+	width: 5px;
+}
+
+.lbl-menu #spn1, #spn2, #spn3 {
+	background: #00ff27;
+	border-radius: 5px;
+	content: '';
+	height: 5px;
+	position: absolute;
+	transition: all 400ms ease;
+	width: 50px;
+}
+
+#spn2 {
+	top: 11px;
+}
+
+#spn3 {
+	top: 22px;
+}
+
+#btn-menu {
+	display: none;
+}
+
+#btn-menu:checked ~ .lbl-menu #spn1 {
+	transform: rotate(140deg);
+	top: 10px;
+}
+
+#btn-menu:checked ~ .lbl-menu #spn2 {
+	opacity: 0;
+}
+
+#btn-menu:checked ~ .lbl-menu #spn3 {
+	transform: rotate(-140deg);
+	top: 10px;
+}
+
+.cont_x {
+	align-items: center;
+	cursor: pointer;
+	display: flex;
+	height: 15px;
+	position: relative;
+	width: 15px;
+}
+
+.cont_x span {
+	background-color: aqua;
+	border-radius: 4px;
+	height: 4px;
+	left: 0;
+	position: absolute;
+	transition: all.5s;
+	width: 100%;
+}
+
+.cont_x span:nth-last-of-type(1) {
+	top: 0;
+}
+
+.cont_x span:nth-last-of-type(3) {
+	bottom: 0;
+}
+
+.cont_x.active span:nth-last-of-type(1) {
+	background-color: #faa207;
+	transform: translateY(20px) rotate(-45deg);
+}
+
+.cont_x.active span:nth-last-of-type(2) {
+	opacity: 0;
+}
+
+.cont_x.active span:nth-last-of-type(3) {
+	background-color: #faa207;
+	transform: translateY(-20px) rotate(45deg);
+}
+
+.menu2.active span:nth-last-of-type(2) {
+	left: 80%;
+}
+
+.menu2.active:before {
+	animation: circulo .5s .3s forwards;
+	border: 4px solid transparent;
+	border-radius: 50%;
+	content: "";
+	height: 84px;
+	left: 50%;
+	margin: -45px 0px 0px -45px;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 84px;
+}
+
+@keyframes circulo {
+	0% {
+		border-color: transparent;
+		transform: rotate(0deg);
+	}
+	25% {
+		border-color: transparent #fff transparent transparent;
+	}
+	50% {
+		border-color: transparent #fff #fff transparent;
+	}
+	75% {
+		border-color: transparent #fff #fff #fff;
+	}
+	100% {
+		border-color: #fff;
+		transform: rotate(-700deg);
+	}
+}
+
+.cont_z {
+	background-color: #fff;
+	position: relative;
+	top: 500px;
+}
+
+@media (max-width: 700px){
+	.bars__menu {
+		cursor: pointer;
+		height: 0px;
+		left: 95%;
+		position: absolute;
+		top: 2%;
+		transform: translate(-50%, -50%) scale(2);
+		width: 15px;
+	}
+
+	.bars__menu span {
+		background: #9a00bf;
+		display: block;
+		height: 2px;
+		margin-top: 2px;
+		transform-origin: 0px 100%;
+		transition: all 600ms;
+		width: 100%;
+	}
+
+}
